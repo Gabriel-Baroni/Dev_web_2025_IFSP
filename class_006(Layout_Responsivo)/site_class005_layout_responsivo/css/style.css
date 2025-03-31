@@ -1,0 +1,154 @@
+*{
+    margin:0px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #6E6E6E;
+}
+body{
+    background-color:#B0B1AF;
+
+}
+
+header h1{
+    background-color: #2D2D2D;
+    position:fixed;
+    width: 100%;
+    padding: 40px;
+    z-index: 1;
+    font-size: 32pt;
+}
+/* Smartphones */
+[class*="col-"]{
+    float:left;
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px){
+    /* Tablets */
+    .col-s-1{
+        width: 8.33%;
+    }
+    .col-s-2{
+        width: 16.66%;
+    }
+    .col-s-3{
+        width: 25%;
+    }
+    .col-s-4{
+        width: 33.33%;
+    }
+    .col-s-5{
+        width: 41.66%;
+    }
+    .col-s-6{
+        width: 50%
+    }
+    .col-s-7{
+        width: 58.33%
+    }
+    .col-s-8{
+        width: 66.66%
+    }
+    .col-s-9{
+        width: 75%
+    }
+    .col-s-10{
+        width: 83.33%
+    }
+    .col-s-11{
+        width: 91.66%
+    }
+    .col-s-12{
+        width: 100%
+    }
+
+}
+@media only screen and (min-width: 889px){
+    /* Desktop */
+    .col-1{
+        width: 8.33%;
+    }
+    .col-2{
+        width: 16.66%;
+    }
+    .col-3{
+        width: 25%;
+    }
+    .col-4{
+        width: 33.33%;
+    }
+    .col-5{
+        width: 41.66%;
+    }
+    .col-6{
+        width: 50%
+    }
+    .col-7{
+        width: 58.33%
+    }
+    .col-8{
+        width: 66.66%
+    }
+    .col-9{
+        width: 75%
+    }
+    .col-10{
+        width: 83.33%
+    }
+    .col-11{
+        width: 91.66%
+    }
+    .col-12{
+        width: 100%
+    }
+}
+
+main{
+    position:relative;
+    top: 130px;
+}
+p{
+    margin-bottom: 20px;
+    margin-left: 10%;
+}
+
+div{
+    width: 50%;
+}
+
+div h1{
+    color: #a0a46b;
+    font-weight: 1000;
+    margin-left: 5%;
+}
+
+
+ul li{
+    padding: 20px;
+    font-size: 20pt;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+
+}
+
+.imagem{
+    display: inline;
+}
+
+.imagem-giratoria {
+    transition: transform 0.5s ease; 
+    margin-left: 20%;
+  }
+.imagem-giratoria:hover {
+    transform: rotate(360deg);
+    animation: pulo 0.5s ease-in-out;
+  }
+
+@keyframes pulo{
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-100px);}
+    100% {transform: translateY(0);}
+}
+
