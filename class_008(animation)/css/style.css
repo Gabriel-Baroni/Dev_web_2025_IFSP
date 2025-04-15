@@ -1,5 +1,23 @@
+:root {
+  --cor-fundo: black;
+  --cor-texto: pink;
+}
+/* #tema-claro-escuro {
+  position: absolute;
+}*/
+
+#tema:checked ~ .conteudo {
+  --cor-fundo: white;
+  --cor-texto: black;
+}
+
+.conteudo {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background 0.5s, color 0.5s;
+}
+
 body {
-  background-color: #fff;
   font-family: sans-serif;
   min-height: 100vh;
   margin: 1px;
@@ -7,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 header {
   display: flex;
   flex-direction: row;
@@ -14,7 +33,7 @@ header {
   align-items: center;
   background-color: #4f46e5;
   padding: 15px;
-  color: #f0f0f0;
+  color: #fff;
   font-size: 14pt;
 }
 header nav {
@@ -35,7 +54,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   flex: 1;
 }
 
@@ -57,11 +75,9 @@ main {
   border-radius: 12px;
 }
 div.textos h1 {
-  color: black;
   font-size: 14pt;
 }
 div.textos h2 {
-  color: grey;
   font-size: 10pt;
 }
 
@@ -78,4 +94,32 @@ footer {
   background-color: #4f46e5;
   color: white;
   text-align: center;
+}
+
+.config {
+  font-size: 2rem;
+  cursor: pointer;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+.menu {
+  position: fixed;
+  top: 2px;
+  left: -300px;
+  width: 200px;
+  height: 100%;
+  background: #3a0db8;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  padding-top: 100px;
+  gap: 1rem;
+  transition: left 0.3s ease;
+}
+
+#menu-lateral:checked ~ .menu {
+  left: 0px;
 }
