@@ -1,0 +1,40 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+}
+
+#input{
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#botao{
+    background-color: lightsalmon;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 40px;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+}
+
+#resultados {
+    display: flex;
+    flex-wrap: wrap;       
+    gap: 20px;            
+    padding: 20px;
+    justify-content: center; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: lightcoral;
+    max-width: 250px;  
+    padding: 20px;
+    box-sizing: border-box;
+}
