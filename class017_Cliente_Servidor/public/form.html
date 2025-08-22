@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+</head>
+<body>
+  <h1>Teste de Formulários</h1>
+
+  <h2>Formulário Buscar</h2>
+  <form action="/aluno" method="GET">
+    Prontuario: <input type="name" name="prontuario"><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+    <h2>Formulário Adicionar</h2>
+  <form action="/aluno" method="POST">
+    Nome: <input type="name" name="nome"><br>
+    Prontuario: <input type="name" name="prontuario"><br>
+    Curso: <input type="name" name="curso"><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h2>Formulário Atualizar</h2>
+  <form action="/alterar_aluno" method="POST">
+    Prontuario: <input type= "text" name="prontuario"><br>
+    Nome: <input type="text" name="nome"><br>
+    ProntuarioNovo: <input type="text" name="prontuarioNovo"><br>
+    Curso: <input type="text" name="curso"><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+
+    <h2>Formulário deletar</h2>
+  <form action="/deletar_aluno" method="POST">
+    Prontuario: <input type= "text" name="prontuario"><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+    <h2>Pesquisar por Curso</h2>
+  <form action="/alunos/curso" method="POST">
+    Prontuario: <input type= "text" name="prontuario"><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>
