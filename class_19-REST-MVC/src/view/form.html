@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+
+    <h1>Formulários</h1>
+    <form action="/tarefa" method="POST">
+        <label for="titulo">Título:</label><br>
+        <input type="text" id="titulo" name="titulo"><br>
+        <label for="descricao">Descrição:</label><br>
+        <input type="text" id="descricao" name="descricao"><br><br>
+        <button type="submit" value="Adicionar Tarefa">Enviar Tarefa</button>
+    </form>
+
+    <form  id="formStatus" action="/tarefa1" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="id">ID da Tarefa para Atualizar Status:</label><br>
+        <input type="text" id="id" name="id"><br><br>
+        <button type="submit" value="Atualizar Status">Atualizar Status</button>
+    </form>
+
+    <form action="/tarefaStatus" method="GET">
+        <label for="status">Filtrar por tarefas feitas ou não feitas:</label><br>
+        <input type="text" id="status" name="status" placeholder="Status (pendente ou feita)"><br><br>
+        <button type="submit" value="Pesquisar por Status">Pesquisar por Status</button>
+    </form>
+
+    <form id="formDelete" action="/delete" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <label for="idDelete">ID da Tarefa para Deletar:</label><br>
+        <input type="text" id="idDelete" name="idDelete"><br><br>
+        <button type="submit" value="Deletar Tarefa">Deletar Tarefa</button>
+    </form>
+
+
+
+<script>
+    document.getElementById('formStatus').addEventListener('submit', function(e) {
+        const id = document.getElementById('id').value;
+        this.action = '/tarefa/' + id + '?_method=PUT';
+});
+
+    document.getElementById('formDelete').addEventListener('submit', function(e) {
+        const id = document.getElementById('idDelete').value;
+        this.action = '/delete/' + id + '?_method=DELETE';
+});
+</script>
+
+    
+</body>
+</html>
