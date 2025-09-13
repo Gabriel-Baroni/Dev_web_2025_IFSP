@@ -14,4 +14,13 @@ const postTurma = (req, res) => {
    return res.status(201).json(novaTurma);
 }
 
-module.exports = {getTurmas, postTurma};
+const deletarTurma = (req, res) => {
+    const { nome } = req.body;
+    const sucesso = turmaModel.deletarTurma(nome);
+    if (!sucesso) {
+        return res.status(400).json({ mensagem: "Não foi possível deletar a turma. Verifique se a turma existe ou se há alunos associados a ela." });
+    }
+    return res.status(200).json({ mensagem: "Turma deletada com sucesso" });
+}
+
+module.exports = {getTurmas, postTurma, deletarTurma};

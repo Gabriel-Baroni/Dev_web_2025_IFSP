@@ -24,8 +24,8 @@ const postAluno = (req, res) => {
 }
 
 const getAlunoTurma = (req, res) => {
-    const idTurma = Number(req.query.idTurma);
-    const alunosfiltros = alunoModel.getAlunoTurma(idTurma);
+    const nomeTurma = req.query.nomeTurma;
+    const alunosfiltros = alunoModel.getAlunoTurma(nomeTurma);
     if (!alunosfiltros) {
         return res.status(404).json({ mensagem: "Turma não informada" });
     }
@@ -38,6 +38,24 @@ const buscarAlunos = (req, res) => {
     res.json(alunos);
 };
 
+const putAluno = (req, res) => {
+    const { nome, nomeNovo, prontuario, idTurma, email } = req.body;
+    const alunoAtualizado = alunoModel.putAluno(nome, nomeNovo, prontuario, Number(idTurma), email);
+    if (!alunoAtualizado) {
+        return res.status(404).json({ mensagem: "Aluno não encontrado" });
+    }
+    return res.status(200).json(alunoAtualizado);
+}
 
-module.exports = {getAlunos, getAlunoNome, postAluno, getAlunoTurma, buscarAlunos};
+const deleteAluno = (req, res) => {
+    const nome = req.body.nome;
+    const alunoDeletado = alunoModel.deleteAluno(nome);
+    if (!alunoDeletado) {
+        return res.status(404).json({ mensagem: "Aluno não encontrado" });
+    }
+    return res.status(200).json({ mensagem: "Aluno deletado com sucesso", alunoDeletado });
+}
+
+
+module.exports = {getAlunos, getAlunoNome, postAluno, getAlunoTurma, buscarAlunos, putAluno, deleteAluno};
 

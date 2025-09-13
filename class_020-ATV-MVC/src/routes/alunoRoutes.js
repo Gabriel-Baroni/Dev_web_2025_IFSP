@@ -7,4 +7,6 @@ AlunoRouter.get('/pesquisar', controller.getAlunoNome);
 AlunoRouter.get('/pesquisarTurma', controller.getAlunoTurma);
 AlunoRouter.post('/novoAluno', controller.postAluno);
 AlunoRouter.get('/buscar', controller.buscarAlunos);
+AlunoRouter.post('/atualizar', controller.putAluno);
+AlunoRouter.post('/deletar', controller.deleteAluno);
 module.exports = AlunoRouter;

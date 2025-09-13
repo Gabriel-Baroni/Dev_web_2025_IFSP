@@ -24,8 +24,8 @@
 <h2> Pesquisar por turma </h2>
 
 <form action="/aluno/pesquisarTurma" method="GET">
-    <label for="turma">Pesquisar alunos por turma usando id:</label>
-    <input type="number" name="idTurma" required>
+    <label for="turma">Pesquisar alunos por turma usando nome da turma:</label>
+    <input type="text" name="nomeTurma" required>
     <button type="submit">Pesquisar</button>
 </form>
 
@@ -58,6 +58,34 @@
     <button type="submit">Cadastrar</button>
 </form>
 
+<h2>Alterar aluno</h2>
+ <form action="/aluno/atualizar" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="id">Nome do aluno que quer atualizar</label>
+    <input type="text" name="nome" required>
+    <br>
+    <label for="nome">Novo nome do aluno:</label>
+    <input type="text" name="nomeNovo" required>
+    <br>
+    <label for = "Prontuário">Prontuário do aluno:</label>
+    <input type="text" name="prontuario" required>
+    <br>
+    <label for="idTurma">ID da turma:</label>
+    <input type="number" name="idTurma" required>
+    <br>
+    <label for = "Email">Email:</label>
+    <input type="text" name="email" required>
+    <br>
+    <button type="submit">Alterar</button>
+</form>
+
+<h2>Deletar aluno</h2>
+<form action="/aluno/deletar" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <label for="nome">Nome do aluno que quer deletar:</label>
+    <input type="text" name="nome" required>
+    <button type="submit">Deletar</button>
+</form>
 
 </body>
 </html>
