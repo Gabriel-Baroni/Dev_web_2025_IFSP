@@ -61,5 +61,16 @@ const deleteAluno = (nome) => {
     alunos.splice(alunoIndex, 1);
     return true; 
 }
-module.exports = {getAlunos,getAlunoTurma, getAlunoNome, postAluno, getAlunosFiltrados, putAluno, deleteAluno, alunos}; 
+
+const alterarTurmaAluno =(NomeAluno, novaTurma) =>{
+    const alunoIndex = alunos.findIndex(a => a.nome === NomeAluno);
+    const turma = turmas.find(t => t.nome === novaTurma);
+    if (alunoIndex === -1 || !turma) {
+        return null; 
+    }
+    alunos[alunoIndex].idTurma = turma.id;
+    return alunos[alunoIndex];
+}
+
+module.exports = {getAlunos,getAlunoTurma, getAlunoNome, postAluno, getAlunosFiltrados, putAluno, deleteAluno, alunos, alterarTurmaAluno}; 
 

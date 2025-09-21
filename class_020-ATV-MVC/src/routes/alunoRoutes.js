@@ -9,4 +9,5 @@ AlunoRouter.post('/novoAluno', controller.postAluno);
 AlunoRouter.get('/buscar', controller.buscarAlunos);
 AlunoRouter.post('/atualizar', controller.putAluno);
 AlunoRouter.post('/deletar', controller.deleteAluno);
+AlunoRouter.post('/alterarTurma', controller.alterarTurmaAluno);
 module.exports = AlunoRouter;

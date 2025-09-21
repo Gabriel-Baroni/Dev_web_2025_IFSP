@@ -87,5 +87,16 @@
     <button type="submit">Deletar</button>
 </form>
 
+<h2>Alterar turma do aluno</h2>
+<form action="/aluno/alterarTurma" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="nome">Nome do aluno que quer alterar a turma:</label>
+    <input type="text" name="NomeAluno" required>
+    <br>
+    <label for="idTurma">ID da nova turma:</label>
+    <input type="text" name="novaTurma" required>
+    <br>
+    <button type="submit">Alterar Turma</button>
+
 </body>
 </html>

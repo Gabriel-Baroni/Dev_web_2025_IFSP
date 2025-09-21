@@ -56,6 +56,14 @@ const deleteAluno = (req, res) => {
     return res.status(200).json({ mensagem: "Aluno deletado com sucesso", alunoDeletado });
 }
 
+const alterarTurmaAluno = (req, res) => {
+    const { NomeAluno, novaTurma } = req.body;
+    const alunoAtualizado = alunoModel.alterarTurmaAluno(NomeAluno, novaTurma);
+    if (!alunoAtualizado) {
+        return res.status(404).json({ mensagem: "Aluno ou Turma não encontrado" });
+    }
+    return res.status(200).json(alunoAtualizado);
+}
 
-module.exports = {getAlunos, getAlunoNome, postAluno, getAlunoTurma, buscarAlunos, putAluno, deleteAluno};
+module.exports = {getAlunos, getAlunoNome, postAluno, getAlunoTurma, buscarAlunos, putAluno, deleteAluno, alterarTurmaAluno};
 

@@ -25,11 +25,11 @@ const deletarTurma = (nome) => {
     if (turmaIndex === -1) {
         return false; 
     }
-    const turmaID = turmas[turmaIndex].id;
-    const turmaAssociada = alunos.some(aluno => aluno.idTurma === turmaID);
-    if (turmaAssociada) {
-        return false; 
-    }
+    // const turmaID = turmas[turmaIndex].id;
+    // const turmaAssociada = alunos.some(aluno => aluno.idTurma === turmaID);
+    // if (turmaAssociada) {
+    //     return false; 
+    // }
     turmas.splice(turmaIndex, 1);
     return true; 
 }
