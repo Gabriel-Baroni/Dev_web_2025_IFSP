@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fomulários dos alunos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+<h1>Pesquisar os alunos</h1>
+
+<a href="/aluno/get"> Listar todos os alunos</a>
+
+
+<h2>Pesquisar por Nome</h2>
+
+<form action="/aluno/pesquisar" method="GET">
+    <label for="turma">Pesquisar alunos por nome:</label>
+    <input type="text" name="nome" required>
+    <button type="submit">Pesquisar</button>
+</form>
+
+
+<h2> Pesquisar por turma </h2>
+
+<form action="/aluno/pesquisarTurma" method="GET">
+    <label for="turma">Pesquisar alunos por turma usando nome da turma:</label>
+    <input type="text" name="nomeTurma" required>
+    <button type="submit">Pesquisar</button>
+</form>
+
+
+<h2>Pesquisar por Nome e Turma</h2>
+
+<form action="/aluno/buscar" method="GET">
+    <label for="turma">ID da Turma:</label>
+    <input type="number" name="idturma">
+    <label for="nome">Nome do Aluno:</label>
+    <input type="text" name="nome">
+    <button type="submit">Pesquisar</button>
+</form>
+
+<h2> Cadastrar novo aluno </h2>
+
+<form action="/aluno/novoAluno" method="POST">
+    <label for="nome">Nome do aluno:</label>
+    <input type="text" name="nome" required>
+    <br>
+    <label for = "Prontuário">Prontuário do aluno:</label>
+    <input type="text" name="prontuario" required>
+    <br>
+    <label for="idTurma">ID da turma:</label>
+    <input type="number" name="idTurma" required>
+    <br>
+    <label for = "Email">Email:</label>
+    <input type="text" name="email" required>
+    <br>
+    <button type="submit">Cadastrar</button>
+</form>
+
+<h2>Alterar aluno</h2>
+ <form action="/aluno/atualizar" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="id">Nome do aluno que quer atualizar</label>
+    <input type="text" name="nome" required>
+    <br>
+    <label for="nome">Novo nome do aluno:</label>
+    <input type="text" name="nomeNovo" required>
+    <br>
+    <label for = "Prontuário">Prontuário do aluno:</label>
+    <input type="text" name="prontuario" required>
+    <br>
+    <label for="idTurma">ID da turma:</label>
+    <input type="number" name="idTurma" required>
+    <br>
+    <label for = "Email">Email:</label>
+    <input type="text" name="email" required>
+    <br>
+    <button type="submit">Alterar</button>
+</form>
+
+<h2>Deletar aluno</h2>
+<form action="/aluno/deletar" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <label for="nome">Nome do aluno que quer deletar:</label>
+    <input type="text" name="nome" required>
+    <button type="submit">Deletar</button>
+</form>
+
+<h2>Alterar turma do aluno</h2>
+<form action="/aluno/alterarTurma" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="nome">Nome do aluno que quer alterar a turma:</label>
+    <input type="text" name="NomeAluno" required>
+    <br>
+    <label for="idTurma">ID da nova turma:</label>
+    <input type="text" name="novaTurma" required>
+    <br>
+    <button type="submit">Alterar Turma</button>
+
+</body>
+</html>

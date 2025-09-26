@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Resposta</title>
+</head>
+<body>
+  <h1> <%= pageTitle %></h1>
+  <ul>
+    <% alunos.forEach(aluno => { %>
+      <li><strong>Nome:</strong> <%= aluno.nome %> - 
+        <strong>Prontuário:</strong> <%= aluno.prontuario %> - 
+        <strong>Id da Turma</strong> <%= aluno.idTurma %> - 
+        <strong>Email:</strong> <%= aluno.email %>
+      </li> 
+      <button>Excluir</button>  
+    <% }) %>
+  </ul>
+
+  <p>
+    <a href="/index.html">Ir voltar a página inicial</a>
+  </p>
+</body>
+</html>

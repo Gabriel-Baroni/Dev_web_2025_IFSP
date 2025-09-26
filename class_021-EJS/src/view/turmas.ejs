@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Resposta</title>
+</head>
+<body>
+  <h1> <%= pageTitle %></h1>
+  <ul>
+    <% turmas.forEach(turma => { %>
+      <li><strong>Id:</strong> <%= turma.id %> - 
+        <strong>Prontuário:</strong> <%= turma.nome %> - 
+      </li> 
+      <button>Excluir</button>  
+    <% }) %>
+  </ul>
+  <p>
+    <a href="/index.html">Ir voltar a página inicial</a>
+  </p>
+</body>
+</html>
